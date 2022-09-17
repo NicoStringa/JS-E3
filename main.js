@@ -59,18 +59,10 @@ const saveLocalStorage = pizzas => {
 const renderPizza = e => {
     e.preventDefault();
      if (!pizzaSearch(pizzas)){
-        alert('No existe la Pizza, por favor seleccione otro numero.')
+        cards.innerHTML = "No existe la pizza seleccionada, por favor elija otro numero"
         return
     } else {
-        cards.innerHTML = `
-        <div class="card">
-        <div class="card-info">
-        <h2>Tipo: ${pizzaSearch(pizzas).nombre}</h2>
-        <img src="${pizzaSearch(pizzas).imagen}" alt="${pizzaSearch(pizzas).nombre}" class="card-img">
-        <small>Ingredientes: ${pizzaSearch(pizzas).ingredientes}</small>
-        <p>Precio: $${pizzaSearch(pizzas).precio}</p>
-        </div>
-        </div>`
+        cards.innerHTML = renderCard(pizzaSearch(pizzas))
     }
 }
 
@@ -83,6 +75,18 @@ const pizzaSearch = () => {
 const getValue = () => {
     const valor = idinput.value
     return valor;
+}
+
+
+const renderCard = (pizza) => {
+  const { nombre, precio, ingredientes, imagen} = pizza
+  return `
+  <div class="card-info">
+  <h2>Tipo: ${pizzaSearch(pizzas).nombre}</h2>
+  <img src="${pizzaSearch(pizzas).imagen}" alt="${pizzaSearch(pizzas).nombre}" class="card-img">
+  <small>Ingredientes: ${pizzaSearch(pizzas).ingredientes}</small>
+  <p>Precio: $${pizzaSearch(pizzas).precio}</p>
+  </div>`
 }
 
 const init = () => {

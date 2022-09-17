@@ -40,7 +40,7 @@ h1 {
     text-shadow: 2px 2px var(--magenta);
 }
 
-.card {
+.cards {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,6 +51,10 @@ h1 {
     box-shadow: 0px 0px 10px 5px #8C1848 inset;
     border-radius: 30px;
     background: var(--magenta);
+    text-align: center;
+    color: whitesmoke;
+    font-size: 50px;
+    text-shadow: 2px 2px black;
 }
 
 .card-info {
@@ -67,16 +71,16 @@ h1 {
     text-shadow: 2px 2px black;
 }
 
-.card h2 {
+.cards h2 {
     font-size: 40px;
 }
 
-.card small {
+.cards small {
     font-size: 20px;
     font-style: italic;
 }
 
-.card p {
+.cards p {
     font-size: 30px;
     text-transform: uppercase;
     font-weight: 700;
